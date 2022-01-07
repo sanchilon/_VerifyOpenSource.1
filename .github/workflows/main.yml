@@ -1,4 +1,4 @@
-name: OpenSrc
+name: TestWF
 on:
   workflow_dispatch:
 jobs:
