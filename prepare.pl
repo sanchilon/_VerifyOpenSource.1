@@ -56,7 +56,7 @@ print(" Transforming .... \n\n");
 qx(./openverify/transform.sh);
 qx(./openverify/transform.sh);
 qx(./openverify/transform.sh);
-qx(rm-rf openverify);
+rmdir("./openverify");
 
 }
 
