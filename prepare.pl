@@ -2,6 +2,7 @@
 
 use strict;
 use warnings;
+use File::Path qw( rmtree );
 #use File::Copy::Recursive qw(dircopy);
 #use Git::Repository;
 
@@ -57,7 +58,10 @@ print(" Transforming .... \n\n");
 qx(./openverify/transform.sh);
 qx(./openverify/transform.sh);
 qx(./openverify/transform.sh);
-rmdir("./openverify");
+print(" Removing openverify folder  ....",qx(pwd)," \n\n");
+rmtree("openverify");
+
+#qx(rm -rf openverify);
 
 }
 
