@@ -38,7 +38,7 @@ my ($version) = @_;
   print qx(pwd); 
   qx(git switch -C main origin/main);
  qx(git pull --rebase origin main);
-
+qx(cp -R ../openverify .);
 #qx(git switch -C open-source-preview-1.2.1);
 #qx(echo "openverify/" >> .gitignore);
 #qx(git commit -am "add .gitignore ");
@@ -50,12 +50,13 @@ my ($version) = @_;
 }
 
 sub transform{
-chdir("../");
+#chdir("../");
 print(qx(pwd),"\n");
 print(" Transforming .... \n\n");
-qx(./scripts/transform.sh);
-qx(./scripts/transform.sh);
-qx(./scripts/transform.sh);
+qx(./openverify/transform.sh);
+qx(./openverify/transform.sh);
+qx(./openverify/transform.sh);
+qx(rm-rf openverify);
 
 }
 
